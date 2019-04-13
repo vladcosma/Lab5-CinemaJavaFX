@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ShowMoviesOrderedByBookingsController">
+    <VBox>
+        <Label text="Movies ordered by bookings">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <HBox>
+            <TableView fx:id="tableViewMovies" editable="true" prefHeight="375.0" prefWidth="539.0">
+                <columns>
+                    <TableColumn fx:id="tableColumnNameMovie" prefWidth="455.0" text="Movie Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="movie" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tableColumnBookingsNumber" minWidth="0.0" prefWidth="82.0" text="Bookings">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bookings" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </HBox>
+    </VBox>
+</HBox>

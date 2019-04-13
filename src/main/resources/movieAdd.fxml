@@ -1,0 +1,30 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Spinner?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Label?>
+<VBox alignment="center" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="UI.MovieController">
+    <HBox alignment="TOP_CENTER">
+        <Label text="Movie ID"/>
+        <Spinner fx:id="spnId" editable="true" initialValue="0" max="2000000000" min="0"/>
+    </HBox>
+    <Pane prefHeight="5.0" prefWidth="330.0"/>
+    <HBox alignment="TOP_CENTER">
+        <TextField fx:id="txtMovieName" prefHeight="25.0" prefWidth="110.0" promptText="Name"/>
+        <TextField fx:id="txtMovieYear" prefHeight="25.0" prefWidth="110.0" promptText="Year"/>
+        <TextField fx:id="txtMoviePrice" prefHeight="25.0" prefWidth="110.0" promptText="Price"/>
+    </HBox>
+    <Pane prefHeight="5.0" prefWidth="330.0"/>
+    <CheckBox fx:id="chkOnScreen" text="On Screen"/>
+    <Pane prefHeight="5.0" prefWidth="330.0"/>
+    <HBox alignment="TOP_CENTER">
+        <Button text="Add" fx:id="btnAdd" onAction="#btnAddClick"/>
+        <Button text="Cancel" fx:id="btnCancel" onAction="#btnCancelClick"/>
+    </HBox>
+</VBox>

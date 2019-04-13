@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.CustomBookingSearchController">
+    <VBox>
+        <HBox alignment="TOP_CENTER">
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" text="Bookings" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="16.0"/>
+                </font>
+            </Label>
+        </HBox>
+        <HBox alignment="TOP_CENTER">
+            <TableView fx:id="tableViewBookings" editable="true" prefHeight="365.0" prefWidth="483.0">
+                <columns>
+                    <TableColumn fx:id="tableColumnIdBooking" text="ID">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="id"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tableColumnIdMovieBooking" text="Movie id">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="idMovie"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tableColumnIdCardBooking" text="Card id">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="idCard"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tableColumnDateOfBooking" prefWidth="118.0" text="Date of booking">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="date"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tableColumnTimeOfBooking" prefWidth="121.0" text="HH:mm">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="time"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </HBox>
+        <HBox alignment="TOP_CENTER" prefHeight="36.0" prefWidth="742.0">
+            <TextField fx:id="startHour" prefHeight="25.0" prefWidth="65.0" promptText="Hour"/>
+            <TextField fx:id="startMinutes" prefHeight="25.0" prefWidth="65.0" promptText="Minutes"/>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="38.0" text="and"/>
+            <TextField fx:id="endHour" prefHeight="25.0" prefWidth="65.0" promptText="Hour"/>
+            <TextField fx:id="endMinutes" prefHeight="25.0" prefWidth="65.0" promptText="Minutes"/>
+            <Pane prefHeight="25.0" prefWidth="19.0"/>
+            <Button fx:id="bookingSearch" onAction="#btnSearchClick" text="Search bookings"/>
+            <Pane prefHeight="25.0" prefWidth="12.0"/>
+            <Button fx:id="btnCancel" onAction="#btnCancelClick" text="Cancel"/>
+        </HBox>
+    </VBox>
+</HBox>

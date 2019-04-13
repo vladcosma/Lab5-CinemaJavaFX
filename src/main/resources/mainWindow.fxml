@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="UI.MainController">
+    <Tab>
+        <VBox alignment="TOP_CENTER">
+            <Label text="Movies:">
+                <font>
+                    <Font name="System Bold" size="16.0"/>
+                </font>
+            </Label>
+            <HBox alignment="CENTER">
+                <TableView fx:id="tableViewMovies" editable="true" prefHeight="400.0" prefWidth="481.0">
+                    <columns>
+                        <TableColumn fx:id="tableColumnIdMovie" text="ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnNameMovie" prefWidth="128.00003051757812" text="Movie Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnYearMovie" prefWidth="89.99996948242188" text="Year">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="year"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnPriceMovie" prefWidth="94.0" text="Price">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="price"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnOnScreensMovie" prefWidth="83.0" text="On screen">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="onScreens"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="482.0">
+                <Button onAction="#btnAddMovieClick" text="Add movie"/>
+                <Button onAction="#btnUpdateMovieClick" text="Update movie"/>
+                <Button onAction="#btnMovieDeleteClick" text="Delete movie"/>
+                <Button onAction="#btnMovieUndoClick" text="Undo movie operation" />
+                <Button onAction="#btnMovieRedoClick" text="Redo movie operation" />
+            </HBox>
+        </VBox>
+        <graphic>
+            <Label text="Movies"/>
+        </graphic>
+    </Tab>
+    <Tab>
+        <graphic>
+            <Label text="Customer Cards"/>
+        </graphic>
+        <VBox alignment="TOP_CENTER" prefHeight="964.0" prefWidth="696.0">
+            <Label text="Cards:">
+                <font>
+                    <Font name="System Bold" size="16.0"/>
+                </font>
+            </Label>
+            <HBox alignment="TOP_CENTER">
+                <TableView fx:id="tableViewCards" editable="true" prefHeight="400.0" prefWidth="694.0">
+                    <columns>
+                        <TableColumn fx:id="tableColumnIdCard" text="ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnNameCard" text="Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnSurnameCard" text="Surname">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="surname"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnCnpCard" prefWidth="114.0" text="CNP">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="CNP"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnDateOfBirthCard" prefWidth="118.0" text="Date of birth">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="dateOfBirth"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnDateOfRegistrationCard" prefWidth="121.0"
+                                     text="Date of registration">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="registrationDate"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnBonusPointsCard" prefWidth="98.0" text="Bonus Points">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="bonusPoints"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                <Button onAction="#btnAddCardClick" text="Add card"/>
+                <Button onAction="#btnUpdateCardClick" text="Update card"/>
+                <Button onAction="#btnDeleteCardClick" text="Delete card"/>
+                <Button onAction="#btnCardUndoClick" text="Undo card operation" />
+                <Button onAction="#btnCardRedoClick" text="Redo card operation" />
+            </HBox>
+        </VBox>
+    </Tab>
+    <Tab>
+        <graphic>
+            <Label text="Bookings"/>
+        </graphic>
+        <VBox alignment="TOP_CENTER" prefHeight="964.0" prefWidth="366.0">
+            <Label text="Bookings:">
+                <font>
+                    <Font name="System Bold" size="16.0"/>
+                </font>
+            </Label>
+            <HBox alignment="CENTER">
+                <TableView fx:id="tableViewBookings" editable="true" prefHeight="400.0" prefWidth="485.0">
+                    <columns>
+                        <TableColumn fx:id="tableColumnIdBooking" text="ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnIdMovieBooking" text="Movie id">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="idMovie"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnIdCardBooking" text="Card id">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="idCard"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnDateOfBooking" prefWidth="118.0" text="Date of booking">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="date"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumnTimeOfBooking" prefWidth="121.0" text="HH:mm">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="time"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                <Button onAction="#btnAddBookingClick" text="Add booking"/>
+                <Button onAction="#btnUpdateBookingClick" text="Update booking"/>
+                <Button onAction="#btnDeleteBookingClick" text="Delete booking"/>
+                <Button onAction="#btnBookingUndoClick" text="Undo booking operation" />
+                <Button onAction="#btnBookingRedoClick" text="Redo booking operation" />
+            </HBox>
+        </VBox>
+    </Tab>
+    <Tab>
+        <graphic>
+            <Label text="Other functionalities"/>
+        </graphic>
+        <VBox alignment="TOP_CENTER" prefHeight="964.0" prefWidth="592.0">
+            <Pane prefHeight="60.0" prefWidth="696.0"/>
+            <Button onAction="#searchClick" text="Full Text Search"/>
+            <Pane prefHeight="60.0" prefWidth="696.0"/>
+            <Button onAction="#customBookingSearch" text="Custom Booking Search"/>
+            <Pane prefHeight="60.0" prefWidth="696.0"/>
+            <Button onAction="#moviesByBookings" text="Show movies by number of bookings"/>
+            <Pane prefHeight="60.0" prefWidth="696.0"/>
+            <Button onAction="#cardsByBonusPoints" text="Show Customer Cards by Bonus Points"/>
+            <Pane prefHeight="60.0" prefWidth="696.0"/>
+            <Button onAction="#deleteBookings" text="Delete all bookings from a period"/>
+            <Pane prefHeight="60.0" prefWidth="696.0"/>
+            <Button onAction="#extraBonusPoints" text="Extra Bonus Points"/>
+        </VBox>
+    </Tab>
+</TabPane>

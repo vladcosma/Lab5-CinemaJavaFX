@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.DeleteAllBookingsBetweenTwoDatesController">
+    <HBox alignment="TOP_CENTER">
+        <Label text="Bookings:">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Label>
+    </HBox>
+    <HBox alignment="TOP_CENTER">
+        <TableView fx:id="tableViewBookings" editable="true" prefHeight="340.0" prefWidth="490.0">
+            <columns>
+                <TableColumn fx:id="tableColumnIdBooking" text="ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnIdMovieBooking" text="Movie id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="idMovie"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnIdCardBooking" text="Card id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="idCard"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnDateOfBooking" prefWidth="118.0" text="Date of booking">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="date"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnTimeOfBooking" prefWidth="126.0" text="HH:mm">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="time"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </HBox>
+    <HBox alignment="TOP_CENTER" prefHeight="36.0" prefWidth="742.0">
+        <TextField fx:id="startDay" prefHeight="25.0" prefWidth="65.0" promptText="Day"/>
+        <TextField fx:id="startMonth" prefHeight="25.0" prefWidth="65.0" promptText="Month"/>
+        <TextField fx:id="startYear" prefHeight="25.0" prefWidth="65.0" promptText="Year"/>
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="51.0" text="and"/>
+        <TextField fx:id="endDay" prefHeight="25.0" prefWidth="65.0" promptText="Day"/>
+        <TextField fx:id="endMonth" prefHeight="25.0" prefWidth="65.0" promptText="Month"/>
+        <TextField fx:id="endYear" prefHeight="25.0" prefWidth="65.0" promptText="Year"/>
+        <Pane prefHeight="100.0" prefWidth="45.0"/>
+        <Button fx:id="deleteButton" onAction="#deleteBookingsClick" text="Delete"/>
+        <Button fx:id="cancelButton" onAction="#cancelClick" text="Cancel"/>
+        <Button onAction="#btnBookingsDeleteUndoClick" text="Undo delete bookings operation" />
+        <Button onAction="#btnBookingsDeleteRedoClick" text="Redo delete bookings operation" />
+    </HBox>
+</VBox>

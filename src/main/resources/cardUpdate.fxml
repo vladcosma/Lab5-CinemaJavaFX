@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="UI.CardController">
+    <HBox alignment="TOP_CENTER">
+        <Label alignment="CENTER" text="Card ID"/>
+        <Spinner fx:id="spnId" editable="true" initialValue="0" max="2000000000" min="0"/>
+    </HBox>
+    <Pane prefHeight="2.0" prefWidth="345.0"/>
+    <HBox alignment="TOP_CENTER">
+        <TextField fx:id="txtCardName" promptText="Name"/>
+        <TextField fx:id="txtCardSurname" promptText="Surname"/>
+    </HBox>
+    <Pane prefHeight="2.0" prefWidth="345.0"/>
+    <HBox alignment="TOP_CENTER">
+        <TextField fx:id="txtCardCNP" promptText="CNP"/>
+    </HBox>
+    <Label text="Date of birth:"/>
+    <HBox alignment="TOP_CENTER" prefWidth="345.0">
+        <TextField fx:id="txtCardDayB" prefHeight="25.0" prefWidth="100.0" promptText="Day"/>
+        <TextField fx:id="txtCardMonthB" prefHeight="25.0" prefWidth="100.0" promptText="Month"/>
+        <TextField fx:id="txtCardYearB" prefHeight="25.0" prefWidth="100.0" promptText="Year"/>
+    </HBox>
+    <Label text="Date of registration"/>
+    <HBox alignment="TOP_CENTER">
+        <TextField fx:id="txtCardDayR" prefHeight="25.0" prefWidth="101.0" promptText="Day"/>
+        <TextField fx:id="txtCardMonthR" prefHeight="25.0" prefWidth="100.0" promptText="Month"/>
+        <TextField fx:id="txtCardYearR" prefHeight="25.0" prefWidth="100.0" promptText="Year"/>
+    </HBox>
+    <Pane prefHeight="2.0" prefWidth="345.0"/>
+    <HBox alignment="TOP_CENTER">
+        <TextField fx:id="txtCardBonusPoints" alignment="TOP_CENTER" prefHeight="25.0" prefWidth="115.0"
+                   promptText="Bonus Points"/>
+    </HBox>
+    <Pane prefHeight="2.0" prefWidth="345.0"/>
+    <HBox alignment="TOP_CENTER">
+        <Button fx:id="btnUpdate" onAction="#btnUpdateClick" text="Update"/>
+        <Button fx:id="btnCancel" onAction="#btnCancelClick" text="Cancel"/>
+    </HBox>
+</VBox>

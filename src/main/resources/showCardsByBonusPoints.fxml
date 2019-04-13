@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="UI.ShowCardsByBonusPointsController">
+    <HBox alignment="CENTER">
+        <Label text="Cards ordered by bonus points">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Label>
+    </HBox>
+    <HBox alignment="TOP_CENTER">
+        <TableView fx:id="tableViewOrderedCards" editable="true" prefHeight="400.0" prefWidth="694.0">
+            <columns>
+                <TableColumn fx:id="tableColumnIdCard" text="ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnNameCard" text="Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnSurnameCard" text="Surname">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="surname"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnCnpCard" prefWidth="114.0" text="CNP">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="CNP"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnDateOfBirthCard" prefWidth="118.0" text="Date of birth">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateOfBirth"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnDateOfRegistrationCard" prefWidth="121.0" text="Date of registration">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="registrationDate"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnBonusPointsCard" prefWidth="98.0" text="Bonus Points">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="bonusPoints"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </HBox>
+</VBox>
